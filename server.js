@@ -85,9 +85,7 @@ app.delete('/user/:id', (req, res) => {
     res.send({'deleted': true, 'id':req.params.id}, 204)
 })
 
-app.listen(port, () => {
-    console.log(`server jalan di port ${port} lurr!!`)
-})
+
 
 
 
@@ -160,3 +158,19 @@ app.get('/v2/user', (req, res) => {
     })
 })
 
+app.get('/error-server', (req, res)=> {
+    res.send(500)
+})
+
+app.get('/bad-request', (req, res) =>{
+    res.send(400)
+})
+
+app.get('/created', (req,res) => {
+    res.send(201)
+})
+
+
+app.listen(port, () => {
+    console.log(`server jalan di port ${port} lurr!!`)
+})
